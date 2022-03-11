@@ -1,0 +1,15 @@
+{
+    "appName":  "Demeter",
+    "dashboardScreen":  "Dashboard",
+    "rhScreen":  "RH",
+    "refundScreen":  "Refund",
+    "moreScreen":  "Mais",
+    "requestRefund":"Request Refund",
+    "seeHistory":"See History",
+    "name":  "Name: ",
+    "repositories": "Repositories",
+    "profile":"Profile",
+    "about":"Abount",
+    "noDescription":"No description for profile.",
+    "search": "Search by"
+}
