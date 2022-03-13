@@ -1,3 +1,4 @@
+import 'package:demeter_app/core/app_assets.dart';
 import 'package:demeter_app/features/home/presentation/cubit/export.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -31,17 +32,14 @@ class DrawerNavigator extends StatelessWidget {
             ),
             child: Column(
               children: [
-                const CircleAvatar(
+                CircleAvatar(
                   maxRadius: 30,
                   minRadius: 20,
                   backgroundColor: Colors.white60,
-                  child: Icon(
-                    CupertinoIcons.person,
-                    size: 50,
-                  ),
+                  child: ClipOval(child: AppAssets.avatar),
                 ),
                 Text(
-                  "Olá, Cássio!",
+                  "Olá, Julia!",
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 Text(

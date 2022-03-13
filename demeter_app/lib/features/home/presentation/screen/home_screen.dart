@@ -1,3 +1,5 @@
+import 'package:demeter_app/core/export.dart';
+import 'package:demeter_app/core/navigation/pages_enum.dart';
 import 'package:demeter_app/features/home/presentation/cubit/export.dart';
 import 'package:demeter_app/features/home/presentation/widgets/export.dart';
 import 'package:flutter/foundation.dart';
@@ -8,6 +10,26 @@ import 'package:demeter_app/features/more/presentation/more_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
+  static final _navigatorKeys = {
+    Pages.dashboard: GlobalKey<NavigatorState>(),
+    Pages.customer: GlobalKey<NavigatorState>(),
+    Pages.vehicle: GlobalKey<NavigatorState>(),
+    Pages.more: GlobalKey<NavigatorState>()
+  };
+
+  Map<String, dynamic Function(BuildContext)> get moreRoutes =>
+      {'/more': (context) => const MoreScreen()};
+  Map<String, dynamic Function(BuildContext)> get dashboardRoutes => {
+        '/dashboard': (context) => const DashBoardScreen(),
+        '/dashboard/example_navigation': (context) => Scaffold(
+              appBar: AppBar(
+                title: Text("Example Navigation"),
+              ),
+              body: const Center(
+                child: Text("Example Navigation"),
+              ),
+            ),
+      };
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +44,20 @@ class HomeScreen extends StatelessWidget {
                 return IndexedStack(
                   index: state.pageIndex,
                   children: [
-                    const DashBoardScreen(),
+                    NavigatorPage(
+                      navigatorKey: _navigatorKeys[Pages.dashboard]!,
+                      routes: dashboardRoutes,
+                    ),
                     Container(
                       color: Colors.red,
                     ),
                     Container(
                       color: Colors.blue,
                     ),
-                    const MoreScreen(),
+                    NavigatorPage(
+                      navigatorKey: _navigatorKeys[Pages.more]!,
+                      routes: moreRoutes,
+                    ),
                   ],
                 );
               }),

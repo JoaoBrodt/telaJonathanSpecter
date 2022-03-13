@@ -18,7 +18,10 @@ class DashBoardScreen extends StatelessWidget {
               child: ButtonLargeLeftIconWidget(
                 text: AppLocalizations.of(context)!.requestRefund,
                 icon: const Icon(Icons.add_circle, size: 30),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context)
+                      .pushNamed('/dashboard/example_navigation');
+                },
               ),
             ),
             const SizedBox(

@@ -4,4 +4,4 @@ export 'presentation/theme/adaptative_theme.dart';
 export 'presentation/theme/theme_dark.dart';
 export 'presentation/theme/theme_default.dart';
 export 'routes.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+export 'navigation/navigator_page.dart';
