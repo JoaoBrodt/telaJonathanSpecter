@@ -1,4 +1,5 @@
 import 'package:demeter_app/core/export.dart';
+import 'package:demeter_app/core/navigation/pages_enum.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_cubit.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_state.dart';
 import 'package:flutter/cupertino.dart';
@@ -40,8 +41,9 @@ class BottomNavigationBarWidget extends StatelessWidget {
             color: Colors.white,
             size: 30,
           ),
-          currentIndex: state.pageIndex,
-          onTap: (index) => context.read<HomeCubit>().changeIndex(index),
+          currentIndex: state.screen.index,
+          onTap: (index) =>
+              context.read<HomeCubit>().changeScreen(Screens.values[index]),
           items: [
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.dashboardScreen,

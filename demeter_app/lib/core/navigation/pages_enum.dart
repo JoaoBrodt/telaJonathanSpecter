@@ -1,1 +1,1 @@
-enum Pages { dashboard, customer, vehicle, more }
+enum Screens { dashboard, rh, refund, more }

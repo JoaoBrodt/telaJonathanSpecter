@@ -6,14 +6,14 @@ import 'package:demeter_app/core/export.dart';
 
 class DemeterApp extends StatelessWidget {
   const DemeterApp({Key? key}) : super(key: key);
-
+  final String _homeRoute = "/home";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateTitle: (BuildContext context) =>
           AppLocalizations.of(context)!.appName,
-      initialRoute: "/home",
+      initialRoute: _homeRoute,
       theme: themeLight,
       darkTheme: themeDark,
       localizationsDelegates: const [
@@ -24,7 +24,7 @@ class DemeterApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('en'), Locale('pt')],
       routes: {
-        Routes.HOME: (context) => const HomeScreen(),
+        _homeRoute: (context) => const HomeScreen(),
       },
     );
   }

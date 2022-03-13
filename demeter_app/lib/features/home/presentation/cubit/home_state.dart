@@ -1,16 +1,17 @@
+import 'package:demeter_app/core/navigation/pages_enum.dart';
 import 'package:equatable/equatable.dart';
 
 class HomeState extends Equatable {
-  final int pageIndex;
+  final Screens screen;
 
-  const HomeState({this.pageIndex = 0});
+  const HomeState({this.screen = Screens.dashboard});
 
   HomeState copyWith({
-    required int pageIndex,
+    required Screens screen,
   }) {
-    return HomeState(pageIndex: pageIndex);
+    return HomeState(screen: screen);
   }
 
   @override
-  List<Object?> get props => [pageIndex];
+  List<Object?> get props => [screen];
 }

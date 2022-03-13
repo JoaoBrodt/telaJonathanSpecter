@@ -11,25 +11,11 @@ import 'package:demeter_app/features/more/presentation/more_screen.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
   static final _navigatorKeys = {
-    Pages.dashboard: GlobalKey<NavigatorState>(),
-    Pages.customer: GlobalKey<NavigatorState>(),
-    Pages.vehicle: GlobalKey<NavigatorState>(),
-    Pages.more: GlobalKey<NavigatorState>()
+    Screens.dashboard: GlobalKey<NavigatorState>(),
+    Screens.rh: GlobalKey<NavigatorState>(),
+    Screens.refund: GlobalKey<NavigatorState>(),
+    Screens.more: GlobalKey<NavigatorState>()
   };
-
-  Map<String, dynamic Function(BuildContext)> get moreRoutes =>
-      {'/more': (context) => const MoreScreen()};
-  Map<String, dynamic Function(BuildContext)> get dashboardRoutes => {
-        '/dashboard': (context) => const DashBoardScreen(),
-        '/dashboard/example_navigation': (context) => Scaffold(
-              appBar: AppBar(
-                title: Text("Example Navigation"),
-              ),
-              body: const Center(
-                child: Text("Example Navigation"),
-              ),
-            ),
-      };
 
   @override
   Widget build(BuildContext context) {
@@ -42,21 +28,23 @@ class HomeScreen extends StatelessWidget {
               listener: (context, state) {},
               builder: (context, state) {
                 return IndexedStack(
-                  index: state.pageIndex,
+                  index: state.screen.index,
                   children: [
                     NavigatorPage(
-                      navigatorKey: _navigatorKeys[Pages.dashboard]!,
-                      routes: dashboardRoutes,
-                    ),
-                    Container(
-                      color: Colors.red,
-                    ),
-                    Container(
-                      color: Colors.blue,
+                      navigatorKey: _navigatorKeys[Screens.dashboard]!,
+                      routes: Routes.dashboard,
                     ),
                     NavigatorPage(
-                      navigatorKey: _navigatorKeys[Pages.more]!,
-                      routes: moreRoutes,
+                      navigatorKey: _navigatorKeys[Screens.rh]!,
+                      routes: Routes.rh,
+                    ),
+                    NavigatorPage(
+                      navigatorKey: _navigatorKeys[Screens.refund]!,
+                      routes: Routes.refund,
+                    ),
+                    NavigatorPage(
+                      navigatorKey: _navigatorKeys[Screens.more]!,
+                      routes: Routes.more,
                     ),
                   ],
                 );
