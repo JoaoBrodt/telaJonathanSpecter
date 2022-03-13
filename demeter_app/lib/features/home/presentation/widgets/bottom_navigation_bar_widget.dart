@@ -1,5 +1,5 @@
 import 'package:demeter_app/core/export.dart';
-import 'package:demeter_app/core/navigation/pages_enum.dart';
+import 'package:demeter_app/core/navigation/screens_enum.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_cubit.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_state.dart';
 import 'package:flutter/cupertino.dart';

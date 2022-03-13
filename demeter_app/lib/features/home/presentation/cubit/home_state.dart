@@ -1,4 +1,4 @@
-import 'package:demeter_app/core/navigation/pages_enum.dart';
+import 'package:demeter_app/core/navigation/screens_enum.dart';
 import 'package:equatable/equatable.dart';
 
 class HomeState extends Equatable {
