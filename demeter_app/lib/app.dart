@@ -24,7 +24,13 @@ class DemeterApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('en'), Locale('pt')],
       routes: {
-        _homeRoute: (context) => const HomeScreen(),
+        _homeRoute: (_) => const HomeScreen(),
+        "/teste": (_) => Scaffold(
+              body: Container(
+                color: Colors.red,
+                child: Center(child: Text("Other Navigation")),
+              ),
+            )
       },
     );
   }

@@ -5,10 +5,8 @@ import 'package:demeter_app/features/home/presentation/widgets/export.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:demeter_app/features/dashboard/export.dart';
-import 'package:demeter_app/features/more/presentation/more_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
   static final _navigatorKeys = {
     Screens.dashboard: GlobalKey<NavigatorState>(),
@@ -17,6 +15,11 @@ class HomeScreen extends StatelessWidget {
     Screens.more: GlobalKey<NavigatorState>()
   };
 
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -31,19 +34,20 @@ class HomeScreen extends StatelessWidget {
                   index: state.screen.index,
                   children: [
                     NavigatorPage(
-                      navigatorKey: _navigatorKeys[Screens.dashboard]!,
+                      navigatorKey:
+                          HomeScreen._navigatorKeys[Screens.dashboard]!,
                       routes: Routes.dashboard,
                     ),
                     NavigatorPage(
-                      navigatorKey: _navigatorKeys[Screens.rh]!,
+                      navigatorKey: HomeScreen._navigatorKeys[Screens.rh]!,
                       routes: Routes.rh,
                     ),
                     NavigatorPage(
-                      navigatorKey: _navigatorKeys[Screens.refund]!,
+                      navigatorKey: HomeScreen._navigatorKeys[Screens.refund]!,
                       routes: Routes.refund,
                     ),
                     NavigatorPage(
-                      navigatorKey: _navigatorKeys[Screens.more]!,
+                      navigatorKey: HomeScreen._navigatorKeys[Screens.more]!,
                       routes: Routes.more,
                     ),
                   ],

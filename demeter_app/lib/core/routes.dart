@@ -1,5 +1,7 @@
+import 'package:demeter_app/core/presentation/theme/adaptative_theme.dart';
 import 'package:demeter_app/features/dashboard/presentation/screen/dashboard.dart';
 import 'package:demeter_app/features/more/exports.dart';
+import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/material.dart';
 
 class Routes {
@@ -9,8 +11,37 @@ class Routes {
               appBar: AppBar(
                 title: Text("Example Navigation"),
               ),
-              body: const Center(
-                child: Text("Example Navigation"),
+              body: Container(
+                alignment: Alignment.center,
+                padding: const EdgeInsets.symmetric(
+                    horizontal: AdaptativeTheme.defaultSpace),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: ButtonLargeLeftIconWidget(
+                        text: 'Voltar Dashboard',
+                        icon: const Icon(Icons.keyboard_arrow_left, size: 30),
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushReplacementNamed('/dashboard');
+                        },
+                      ),
+                    ),
+                    const SizedBox(width: 30),
+                    Flexible(
+                      child: ButtonLargeLeftIconWidget(
+                        text: 'Other Navigation',
+                        icon: const Icon(Icons.keyboard_double_arrow_left,
+                            size: 30),
+                        onPressed: () {
+                          Navigator.of(context, rootNavigator: true)
+                              .pushReplacementNamed('/teste');
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
       };
