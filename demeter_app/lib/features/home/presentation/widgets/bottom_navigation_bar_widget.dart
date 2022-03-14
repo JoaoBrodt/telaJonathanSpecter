@@ -1,7 +1,7 @@
-import 'package:demeter_app/core/export.dart';
 import 'package:demeter_app/core/navigation/screens_enum.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_cubit.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_state.dart';
+import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +13,8 @@ class BottomNavigationBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: AdaptativeTheme.minimunExtraSpace),
+      padding: EdgeInsets.only(
+          top: getProportionateScreenWidth(AdaptativeTheme.mediumSpace)),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(

@@ -16,7 +16,8 @@ class ButtonLargeLeftIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.all(getProportionateScreenWidth(15))),
+          padding: EdgeInsets.all(
+              getProportionateScreenWidth(AdaptativeTheme.defaultSpace))),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -25,10 +26,12 @@ class ButtonLargeLeftIconWidget extends StatelessWidget {
             child: icon,
           ),
           Flexible(
-            child: Text(
-              text,
-              style: Theme.of(context).textTheme.labelMedium,
-            ),
+            child: Text(text,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+                style: Theme.of(context).textTheme.labelMedium
+                // ?.copyWith(fontSize: getProportionateScreenWidth(16)),
+                ),
           ),
         ],
       ),

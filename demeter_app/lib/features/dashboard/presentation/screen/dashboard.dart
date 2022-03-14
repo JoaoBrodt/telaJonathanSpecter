@@ -1,4 +1,4 @@
-import 'package:demeter_app/core/presentation/theme/adaptative_theme.dart';
+import 'package:demeter_design_system/adaptative_theme.dart';
 import 'package:demeter_design_system/sized_config.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
@@ -10,6 +10,7 @@ class DashBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: getProportionateScreenWidth(30),
       padding: EdgeInsets.all(
           getProportionateScreenWidth(AdaptativeTheme.defaultSpace)),
       child: Row(
@@ -27,7 +28,7 @@ class DashBoardScreen extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: getProportionateScreenWidth(AdaptativeTheme.defaultSpace),
+            width: getProportionateScreenWidth(16),
           ),
           Flexible(
             child: ButtonLargeLeftIconWidget(
