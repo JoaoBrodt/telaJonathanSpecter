@@ -4,28 +4,27 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final themeLight = ThemeData(
-  textTheme: GoogleFonts.robotoTextTheme(
-    const TextTheme(
-      headlineLarge: TextStyle(
-        color: Colors.white,
-        fontSize: 22,
-        fontWeight: FontWeight.bold,
-      ),
-      labelLarge: TextStyle(
-        color: Colors.white,
-        fontSize: 18,
-        fontWeight: FontWeight.bold,
-      ),
-      labelSmall: TextStyle(
-        color: Colors.white,
-        fontSize: 10,
-        fontWeight: FontWeight.normal,
-      ),
-      labelMedium: TextStyle(
-        color: Color.fromRGBO(255, 255, 255, 1),
-        fontSize: 13,
-        fontWeight: FontWeight.bold,
-      ),
+  fontFamily: 'ProximaNova',
+  textTheme: const TextTheme(
+    headlineLarge: TextStyle(
+      color: Colors.white,
+      fontSize: 22,
+      fontWeight: FontWeight.bold,
+    ),
+    labelLarge: TextStyle(
+      color: Colors.white,
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+    ),
+    labelSmall: TextStyle(
+      color: Colors.white,
+      fontSize: 10,
+      fontWeight: FontWeight.normal,
+    ),
+    labelMedium: TextStyle(
+      color: Color.fromRGBO(255, 255, 255, 1),
+      fontSize: 13,
+      fontWeight: FontWeight.bold,
     ),
   ),
   scaffoldBackgroundColor: const Color(0xFFedecec),

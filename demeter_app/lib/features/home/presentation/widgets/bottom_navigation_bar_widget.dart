@@ -23,17 +23,18 @@ class BottomNavigationBarWidget extends StatelessWidget {
           )
         ],
         gradient: const LinearGradient(
-          colors: [Color(0xFF1b1b34), Color(0xFF2e3e66)],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-          stops: [0.0, 1],
-          tileMode: TileMode.mirror,
+          colors: [Color(0xFF364976), Color(0xFF212E49), Color(0xFF1B253B)],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          stops: [0.1, 0.8, 1],
+          tileMode: TileMode.clamp,
         ),
       ),
       child: BlocBuilder<HomeCubit, HomeState>(builder: (context, state) {
         return BottomNavigationBar(
           iconSize: 30,
           backgroundColor: Colors.transparent,
+          elevation: 0,
           type: BottomNavigationBarType.fixed,
           unselectedItemColor: Colors.white70,
           selectedItemColor: Colors.white,
