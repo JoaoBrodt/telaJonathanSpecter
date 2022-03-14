@@ -1,11 +1,37 @@
 import 'package:demeter_app/core/export.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 final themeLight = ThemeData(
   fontFamily: 'ProximaNova',
-  textTheme: const TextTheme(
+  textTheme: textTheme(),
+  scaffoldBackgroundColor: const Color(0xFFF6F6F6),
+  cardTheme: cardTheme(),
+  appBarTheme: appBarTheme(),
+  elevatedButtonTheme: elevatedButtonTheme(),
+  primaryColor: const Color(0xFF11ABEF),
+  indicatorColor: const Color(0xFF364976),
+  progressIndicatorTheme:
+      const ProgressIndicatorThemeData(color: Color(0xFF364976)),
+);
+
+TextTheme textTheme() {
+  return const TextTheme(
+    titleLarge: TextStyle(
+      color: Colors.white,
+      fontSize: 42,
+      fontWeight: FontWeight.bold,
+    ),
+    titleMedium: TextStyle(
+      color: Color(0xFF364976),
+      fontSize: 32,
+      fontWeight: FontWeight.bold,
+    ),
+    titleSmall: TextStyle(
+      color: Colors.white,
+      fontSize: 24,
+      fontWeight: FontWeight.bold,
+    ),
     headlineLarge: TextStyle(
       color: Colors.white,
       fontSize: 22,
@@ -26,21 +52,29 @@ final themeLight = ThemeData(
       fontSize: 13,
       fontWeight: FontWeight.bold,
     ),
-  ),
-  scaffoldBackgroundColor: const Color(0xFFedecec),
-  cardTheme: CardTheme(
+  );
+}
+
+CardTheme cardTheme() {
+  return CardTheme(
       elevation: 8,
       shadowColor: Colors.black.withOpacity(.2),
       shape: ShapeDecoration.fromBoxDecoration(
         BoxDecoration(
           borderRadius: BorderRadius.circular(10),
         ),
-      ).shape),
-  appBarTheme: const AppBarTheme(
+      ).shape);
+}
+
+AppBarTheme appBarTheme() {
+  return const AppBarTheme(
     backgroundColor: Colors.deepPurple,
     systemOverlayStyle: SystemUiOverlayStyle.light,
-  ),
-  elevatedButtonTheme: ElevatedButtonThemeData(
+  );
+}
+
+ElevatedButtonThemeData elevatedButtonTheme() {
+  return ElevatedButtonThemeData(
     style: ButtonStyle(
       elevation: MaterialStateProperty.all<double>(4),
       foregroundColor:
@@ -59,9 +93,5 @@ final themeLight = ThemeData(
         ),
       ),
     ),
-  ),
-  primaryColor: Colors.deepPurple,
-  indicatorColor: Colors.deepPurple,
-  progressIndicatorTheme:
-      const ProgressIndicatorThemeData(color: Colors.deepPurple),
-);
+  );
+}

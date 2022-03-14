@@ -2,9 +2,11 @@ import 'package:demeter_app/core/export.dart';
 import 'package:demeter_app/core/navigation/screens_enum.dart';
 import 'package:demeter_app/features/home/presentation/cubit/export.dart';
 import 'package:demeter_app/features/home/presentation/widgets/export.dart';
+import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,16 +23,25 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final appLocalizations = AppLocalizations.of(context);
+
     return BlocProvider(
-      create: (context) => HomeCubit(const HomeState()),
-      child: Scaffold(
-          appBar: kIsWeb ? AppBar() : null,
-          drawer: kIsWeb ? const DrawerNavigator() : null,
-          body: BlocConsumer<HomeCubit, HomeState>(
-              listener: (context, state) {},
-              builder: (context, state) {
-                return IndexedStack(
+      create: (context) => HomeCubit(
+          HomeState(title: appLocalizations?.dashboardScreen ?? ''),
+          appLocalizations!),
+      child: BlocConsumer<HomeCubit, HomeState>(
+          listener: (context, state) {},
+          builder: (context, state) {
+            return Scaffold(
+                appBar: !kIsWeb ? AppBarWidget(title: state.title) : null,
+                drawer: kIsWeb ? const DrawerNavigator() : null,
+                body: IndexedStack(
                   index: state.screen.index,
                   children: [
                     NavigatorPage(
@@ -51,12 +62,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       routes: Routes.more,
                     ),
                   ],
-                );
-              }),
-          floatingActionButtonLocation:
-              FloatingActionButtonLocation.centerDocked,
-          bottomNavigationBar:
-              !kIsWeb ? const BottomNavigationBarWidget() : null),
+                ),
+                floatingActionButtonLocation:
+                    FloatingActionButtonLocation.centerDocked,
+                bottomNavigationBar:
+                    !kIsWeb ? const BottomNavigationBarWidget() : null);
+          }),
     );
   }
 }
