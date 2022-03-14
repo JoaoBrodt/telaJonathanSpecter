@@ -2,7 +2,7 @@ class AdaptativeTheme {
   static const noneSpace = 0.0;
   static const minimunSpace = 10.0;
   static const minimunExtraSpace = 5.0;
-  static const defaultSpace = 16.0;
+  static const defaultSpace = 23.0;
   static const largeSpace = 24.0;
   static const largeSpacePlus = 26.0;
   static const extraSpace = 32.0;
