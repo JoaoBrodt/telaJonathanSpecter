@@ -40,7 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
           listener: (context, state) {},
           builder: (context, state) {
             return Scaffold(
-                appBar: !kIsWeb ? AppBarWidget(title: state.title) : null,
                 drawer: kIsWeb ? const DrawerNavigator() : null,
                 body: IndexedStack(
                   index: state.screen.index,

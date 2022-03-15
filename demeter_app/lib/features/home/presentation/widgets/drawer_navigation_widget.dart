@@ -22,11 +22,14 @@ class DrawerNavigator extends StatelessWidget {
                   spreadRadius: 5,
                 )
               ],
-              gradient: const LinearGradient(
-                colors: [Color(0xFF1b1b34), Color(0xFF2e3e66)],
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xFF1b1b34),
+                  Theme.of(context).colorScheme.secondary
+                ],
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
-                stops: [0.0, 1],
+                stops: const [0.0, 1],
                 tileMode: TileMode.mirror,
               ),
             ),

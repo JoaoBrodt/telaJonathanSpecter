@@ -1,6 +1,7 @@
 {
     "appName":  "Demeter",
     "dashboardScreen":  "Dashboard",
+    "dashboardHelloDescription": "Esses são seus históricos de reembolso.",
     "rhScreen":  "RH",
     "refundScreen":  "Refund",
     "moreScreen":  "Mais",

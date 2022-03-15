@@ -8,9 +8,8 @@ class Routes {
   static Map<String, dynamic Function(BuildContext)> get dashboard => {
         '/dashboard': (context) => const DashBoardScreen(),
         '/dashboard/example_navigation': (context) => Scaffold(
-              appBar: AppBar(
-                title: Text("Example Navigation"),
-              ),
+              appBar: const AppBarWidget(
+                  title: 'Exemplo de navegação', shadows: false),
               body: Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(
@@ -23,8 +22,7 @@ class Routes {
                         text: 'Voltar Dashboard',
                         icon: const Icon(Icons.keyboard_arrow_left, size: 30),
                         onPressed: () {
-                          Navigator.of(context)
-                              .pushReplacementNamed('/dashboard');
+                          Navigator.of(context).pop();
                         },
                       ),
                     ),
