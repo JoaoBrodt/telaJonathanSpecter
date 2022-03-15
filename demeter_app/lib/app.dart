@@ -28,7 +28,7 @@ class DemeterApp extends StatelessWidget {
         "/teste": (_) => Scaffold(
               body: Container(
                 color: Colors.red,
-                child: Center(child: Text("Other Navigation")),
+                child: const Center(child: Text("Other Navigation")),
               ),
             )
       },
