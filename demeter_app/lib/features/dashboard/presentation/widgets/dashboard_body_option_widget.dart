@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class DashboardBodyOptionWidget extends StatelessWidget {
   final String title;
+
   final Widget icon;
   const DashboardBodyOptionWidget(
       {Key? key, required this.title, required this.icon})
