@@ -1,4 +1,3 @@
-import 'package:demeter_app/core/export.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -12,9 +11,9 @@ final themeLight = ThemeData(
   elevatedButtonTheme: elevatedButtonTheme(),
   primaryColor: const Color(0xFF11ABEF),
   indicatorColor: const Color(0xFF364976),
+  colorScheme: const ColorScheme.light(secondary: Color(0xFF1B253B)),
   progressIndicatorTheme:
       const ProgressIndicatorThemeData(color: Color(0xFF364976)),
-  visualDensity: VisualDensity.adaptivePlatformDensity,
 );
 
 TextTheme textTheme() {
@@ -30,7 +29,7 @@ TextTheme textTheme() {
       fontWeight: FontWeight.bold,
     ),
     titleSmall: TextStyle(
-      color: Colors.white,
+      color: Color(0xFF364976),
       fontSize: 24,
       fontWeight: FontWeight.bold,
     ),
@@ -50,8 +49,13 @@ TextTheme textTheme() {
       fontWeight: FontWeight.normal,
     ),
     labelMedium: TextStyle(
-      color: Color.fromRGBO(255, 255, 255, 1),
+      color: Colors.white,
       fontSize: 16,
+      fontWeight: FontWeight.bold,
+    ),
+    displayLarge: TextStyle(
+      color: Color.fromRGBO(255, 255, 255, 1),
+      fontSize: 40,
       fontWeight: FontWeight.bold,
     ),
   );

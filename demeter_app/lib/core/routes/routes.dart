@@ -1,4 +1,3 @@
-import 'package:demeter_design_system/adaptative_theme.dart';
 import 'package:demeter_app/features/dashboard/presentation/screen/dashboard.dart';
 import 'package:demeter_app/features/more/exports.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
@@ -8,9 +7,8 @@ class Routes {
   static Map<String, dynamic Function(BuildContext)> get dashboard => {
         '/dashboard': (context) => const DashBoardScreen(),
         '/dashboard/example_navigation': (context) => Scaffold(
-              appBar: AppBar(
-                title: Text("Example Navigation"),
-              ),
+              appBar: const AppBarWidget(
+                  title: 'Exemplo de navegação', shadows: false),
               body: Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.symmetric(
@@ -23,8 +21,7 @@ class Routes {
                         text: 'Voltar Dashboard',
                         icon: const Icon(Icons.keyboard_arrow_left, size: 30),
                         onPressed: () {
-                          Navigator.of(context)
-                              .pushReplacementNamed('/dashboard');
+                          Navigator.of(context).pop();
                         },
                       ),
                     ),

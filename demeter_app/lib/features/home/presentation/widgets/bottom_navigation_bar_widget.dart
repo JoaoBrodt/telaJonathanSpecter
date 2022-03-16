@@ -23,11 +23,15 @@ class BottomNavigationBarWidget extends StatelessWidget {
             spreadRadius: 5,
           )
         ],
-        gradient: const LinearGradient(
-          colors: [Color(0xFF364976), Color(0xFF212E49), Color(0xFF1B253B)],
+        gradient: LinearGradient(
+          colors: [
+            const Color(0xFF364976),
+            const Color(0xFF212E49),
+            Theme.of(context).colorScheme.secondary
+          ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          stops: [0.1, 0.8, 1],
+          stops: const [0.1, 0.8, 1],
           tileMode: TileMode.clamp,
         ),
       ),
