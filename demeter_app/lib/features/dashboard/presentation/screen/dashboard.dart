@@ -1,5 +1,5 @@
-import 'package:demeter_design_system/adaptative_theme.dart';
-import 'package:demeter_design_system/sized_config.dart';
+import 'package:demeter_app/core/app_assets.dart';
+import 'package:demeter_app/features/dashboard/presentation/widgets/dashboard_body_option_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/material.dart';
@@ -9,33 +9,84 @@ class DashBoardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: getProportionateScreenWidth(30),
-      padding: EdgeInsets.all(
-          getProportionateScreenWidth(AdaptativeTheme.defaultSpace)),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Scaffold(
+      appBar: AppBarWidget(
+          title: AppLocalizations.of(context)!.dashboardScreen, shadows: false),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Flexible(
-            child: ButtonLargeLeftIconWidget(
-              text: AppLocalizations.of(context)!.requestRefund,
-              icon:
-                  Icon(Icons.add_circle, size: getProportionateScreenWidth(30)),
-              onPressed: () {
-                Navigator.of(context)
-                    .pushNamed('/dashboard/example_navigation');
-              },
+          HelloWidget(
+            name: 'Júlia',
+            description:
+                AppLocalizations.of(context)!.dashboardHelloDescription,
+            image: AppAssets.avatar,
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal:
+                  getProportionateScreenWidth(AdaptativeTheme.defaultSpace),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Flexible(
+                  child: ButtonLargeLeftIconWidget(
+                    text: AppLocalizations.of(context)!.requestRefund,
+                    icon: const Icon(Icons.add_circle, size: 30),
+                    onPressed: () {
+                      Navigator.of(context)
+                          .pushNamed('/dashboard/example_navigation');
+                    },
+                  ),
+                ),
+                SizedBox(
+                  width: getProportionateScreenWidth(16),
+                ),
+                Flexible(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(minHeight: 62),
+                    child: ButtonLargeLeftIconWidget(
+                      text: AppLocalizations.of(context)!.seeHistory,
+                      icon: const Icon(Icons.timelapse_rounded, size: 30),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
-          SizedBox(
-            width: getProportionateScreenWidth(16),
+          Padding(
+            padding: EdgeInsets.fromLTRB(
+              getProportionateScreenWidth(AdaptativeTheme.defaultSpace),
+              getProportionateScreenWidth(AdaptativeTheme.extraSpace),
+              getProportionateScreenWidth(AdaptativeTheme.defaultSpace),
+              getProportionateScreenWidth(AdaptativeTheme.minimunSpace),
+            ),
+            child: LargeTitleWidget(
+                text: AppLocalizations.of(context)!.dashboardLastRefunds),
           ),
-          Flexible(
-            child: ButtonLargeLeftIconWidget(
-              text: AppLocalizations.of(context)!.seeHistory,
-              icon: Icon(Icons.timelapse_rounded,
-                  size: getProportionateScreenWidth(30)),
-              onPressed: () {},
+          Expanded(
+            child: SingleChildScrollView(
+              padding:
+                  const EdgeInsets.only(bottom: AdaptativeTheme.defaultSpace),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  DashboardBodyOptionWidget(
+                    title: AppLocalizations.of(context)!.dashboardApproved,
+                    icon: AppAssets.approved,
+                  ),
+                  DashboardBodyOptionWidget(
+                    title: AppLocalizations.of(context)!.dashboardRepproved,
+                    icon: AppAssets.repproved,
+                  ),
+                  DashboardBodyOptionWidget(
+                    title: AppLocalizations.of(context)!.dashboardWaiting,
+                    icon: AppAssets.waiting,
+                  ),
+                ],
+              ),
             ),
           ),
         ],

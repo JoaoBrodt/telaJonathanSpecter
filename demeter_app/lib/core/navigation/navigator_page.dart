@@ -24,9 +24,12 @@ class NavigatorPage extends StatelessWidget {
               pageBuilder: (context, animation, secondaryAnimation) {
             return routes[routeSettings.name]!(context);
           }, transitionsBuilder: (context, animation, anotherAnimation, child) {
-            return FadeTransition(
-              opacity: animation,
-              child: child,
+            return SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(0.0, 0.5),
+                end: const Offset(0.0, 0),
+              ).animate(animation),
+              child: FadeTransition(opacity: animation, child: child),
             );
           });
         },
