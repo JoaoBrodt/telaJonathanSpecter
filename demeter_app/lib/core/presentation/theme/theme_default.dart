@@ -1,4 +1,3 @@
-import 'package:demeter_app/core/export.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -30,7 +29,7 @@ TextTheme textTheme() {
       fontWeight: FontWeight.bold,
     ),
     titleSmall: TextStyle(
-      color: Colors.white,
+      color: Color(0xFF364976),
       fontSize: 24,
       fontWeight: FontWeight.bold,
     ),

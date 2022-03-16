@@ -17,8 +17,6 @@ class HelloWidget extends StatelessWidget {
     return ClipPath(
       clipper: ClipperWave(),
       child: Container(
-          // constraints:
-          //     BoxConstraints(minHeight: getProportionateScreenHeight(145)),
           padding: EdgeInsets.symmetric(
               horizontal:
                   getProportionateScreenWidth(AdaptativeTheme.defaultSpace)),
@@ -38,7 +36,7 @@ class HelloWidget extends StatelessWidget {
                     ),
                     Flexible(
                       child: Text(
-                        "Esses são seus históricos de reembolso",
+                        description,
                         style: Theme.of(context)
                             .textTheme
                             .labelMedium

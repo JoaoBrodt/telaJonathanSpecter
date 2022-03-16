@@ -24,7 +24,7 @@ class DrawerNavigator extends StatelessWidget {
               ],
               gradient: LinearGradient(
                 colors: [
-                  Color(0xFF1b1b34),
+                  const Color(0xFF1b1b34),
                   Theme.of(context).colorScheme.secondary
                 ],
                 begin: Alignment.topCenter,

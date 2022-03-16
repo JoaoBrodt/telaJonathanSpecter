@@ -14,7 +14,7 @@ class MockAppLocalizations extends Mock implements AppLocalizations {
   final refundScreen = 'Refund';
   @override
   final moreScreen = 'More';
-  MockAppLocalizations() {}
+  MockAppLocalizations();
 }
 
 void main() {

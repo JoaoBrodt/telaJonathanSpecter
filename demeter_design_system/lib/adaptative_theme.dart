@@ -6,7 +6,7 @@ class AdaptativeTheme {
   static const defaultSpace = 23.0;
   static const largeSpace = 24.0;
   static const largeSpacePlus = 26.0;
-  static const extraSpace = 32.0;
+  static const extraSpace = 30.0;
   static const titleSize = 24.0;
   static const minIconSize = 16.0;
   static const extraRounded = 20.0;

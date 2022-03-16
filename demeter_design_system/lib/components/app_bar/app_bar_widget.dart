@@ -1,4 +1,3 @@
-import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
@@ -13,7 +12,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      title: Text(title, style: Theme.of(context).textTheme.titleSmall),
+      title: Text(title, style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)),
       centerTitle: false,
       actions: actions,
       bottomOpacity: 0,
