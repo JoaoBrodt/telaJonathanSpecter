@@ -65,10 +65,8 @@ class DashboardBodyOptionWidget extends StatelessWidget {
                     padding: EdgeInsets.only(
                       left: index == 0
                           ? getProportionateScreenWidth(
-                              AdaptativeTheme.defaultSpace)
+                              AdaptativeTheme.smallSpace)
                           : 0,
-                      right: getProportionateScreenWidth(
-                          AdaptativeTheme.mediumSpace),
                     ),
                     child: DashboardOptionItemWidget(
                       refund: refunds[index],

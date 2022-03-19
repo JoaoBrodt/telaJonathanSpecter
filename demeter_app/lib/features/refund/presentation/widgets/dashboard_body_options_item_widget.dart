@@ -11,11 +11,15 @@ class DashboardOptionItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: getProportionateScreenWidth(190),
-      height: 129,
+      height: 149,
+      margin: const EdgeInsets.symmetric(
+          vertical: AdaptativeTheme.mediumSpace,
+          horizontal: AdaptativeTheme.smallSpace),
       child: Card(
-        // elevation: 10,
+        elevation: 10,
+        shadowColor: Colors.black.withOpacity(0.8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -37,7 +41,7 @@ class DashboardOptionItemWidget extends StatelessWidget {
                 ),
               ),
             ),
-            _ContainerButtonWidget()
+            const _ContainerButtonWidget()
           ],
         ),
       ),
