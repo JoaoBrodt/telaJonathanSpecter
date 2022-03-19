@@ -23,9 +23,10 @@ class _CardRefundShimmerItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: getProportionateScreenWidth(180),
-      height: 130,
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 450, maxHeight: 149),
+      // width: getProportionateScreenWidth(180),
+      // height: 130,
       child: Card(
         elevation: 10,
         child: Column(

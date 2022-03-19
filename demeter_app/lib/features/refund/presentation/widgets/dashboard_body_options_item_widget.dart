@@ -11,38 +11,42 @@ class DashboardOptionItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: getProportionateScreenWidth(190),
-      height: 149,
-      margin: const EdgeInsets.symmetric(
-          vertical: AdaptativeTheme.mediumSpace,
-          horizontal: AdaptativeTheme.smallSpace),
-      child: Card(
-        elevation: 10,
-        shadowColor: Colors.black.withOpacity(0.8),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Flexible(
-              child: Container(
-                margin: const EdgeInsets.all(AdaptativeTheme.smallSpace),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Flexible(
-                      child: _TravelTitleDescriptionWidget(refund: refund),
-                    ),
-                    _ItemDescriptionWidget(refund: refund),
-                    _RowTypeValueWidget(
-                      refund: refund,
-                    ),
-                  ],
+    return ConstrainedBox(
+      constraints: BoxConstraints(maxWidth: 400, maxHeight: 149),
+      // width: getProportionateScreenWidth(190),
+      // height: 149,
+
+      child: Container(
+        margin: const EdgeInsets.symmetric(
+            vertical: AdaptativeTheme.mediumSpace,
+            horizontal: AdaptativeTheme.smallSpace),
+        child: Card(
+          elevation: 10,
+          shadowColor: Colors.black.withOpacity(0.8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Flexible(
+                child: Container(
+                  margin: const EdgeInsets.all(AdaptativeTheme.smallSpace),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Flexible(
+                        child: _TravelTitleDescriptionWidget(refund: refund),
+                      ),
+                      _ItemDescriptionWidget(refund: refund),
+                      _RowTypeValueWidget(
+                        refund: refund,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const _ContainerButtonWidget()
-          ],
+              const _ContainerButtonWidget()
+            ],
+          ),
         ),
       ),
     );

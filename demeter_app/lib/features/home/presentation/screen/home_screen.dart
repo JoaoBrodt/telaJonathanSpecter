@@ -64,7 +64,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       routes: Routes.rh,
                     ),
                     NavigatorPage(
-                      navigatorKey: HomeScreen._navigatorKeys[Screens.refund]!,
+                      navigatorKey:
+                          HomeScreen._navigatorKeys[Screens.refund]!,
                       routes: Routes.refund,
                     ),
                     NavigatorPage(

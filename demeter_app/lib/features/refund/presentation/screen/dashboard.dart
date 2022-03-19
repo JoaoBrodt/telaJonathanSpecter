@@ -1,8 +1,10 @@
 import 'package:demeter_app/core/app_assets.dart';
+import 'package:demeter_app/features/home/presentation/widgets/drawer_navigation_widget.dart';
 import 'package:demeter_app/features/refund/presentation/bloc/search/refund_search_bloc.dart';
 import 'package:demeter_app/features/refund/presentation/bloc/search/refund_search_state.dart';
 import 'package:demeter_app/features/refund/presentation/dtos/refund_dto.dart';
 import 'package:demeter_app/features/refund/presentation/widgets/dashboard_body_option_widget.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
@@ -16,6 +18,7 @@ class DashBoardScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBarWidget(
           title: AppLocalizations.of(context)!.dashboardScreen, shadows: false),
+      drawer: kIsWeb ? const DrawerNavigator() : null,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,6 +29,7 @@ class DashBoardScreen extends StatelessWidget {
             image: AppAssets.avatar,
           ),
           Container(
+            alignment: Alignment.center,
             margin: const EdgeInsets.only(bottom: AdaptativeTheme.minimunSpace),
             padding: EdgeInsets.symmetric(
               horizontal:
