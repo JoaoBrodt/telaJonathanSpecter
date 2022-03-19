@@ -2,11 +2,13 @@ import 'package:demeter_app/core/export.dart';
 import 'package:demeter_app/core/navigation/screens_enum.dart';
 import 'package:demeter_app/features/home/presentation/cubit/export.dart';
 import 'package:demeter_app/features/home/presentation/widgets/export.dart';
+import 'package:demeter_app/features/refund/presentation/bloc/search/refund_search_bloc.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:get_it/get_it.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -44,10 +46,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 body: IndexedStack(
                   index: state.screen.index,
                   children: [
-                    NavigatorPage(
-                      navigatorKey:
-                          HomeScreen._navigatorKeys[Screens.dashboard]!,
-                      routes: Routes.dashboard,
+                    BlocProvider(
+                      create: (context) {
+                        final refund = RefundSearchBloc(GetIt.I());
+                        refund.searchApproved();
+                        refund.searchPending();
+                        return refund;
+                      },
+                      child: NavigatorPage(
+                        navigatorKey:
+                            HomeScreen._navigatorKeys[Screens.dashboard]!,
+                        routes: Routes.dashboard,
+                      ),
                     ),
                     NavigatorPage(
                       navigatorKey: HomeScreen._navigatorKeys[Screens.rh]!,

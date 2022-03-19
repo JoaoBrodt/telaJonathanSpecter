@@ -4,4 +4,3 @@ export 'sized_config.dart';
 export 'adaptative_theme.dart';
 export 'components/text/export.dart';
 export 'components/cards/export.dart';
-export 'components/extras/widgets/refund_shimmer_widget.dart';
