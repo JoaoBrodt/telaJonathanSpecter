@@ -39,13 +39,17 @@ class DashBoardScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Flexible(
-                  child: ButtonLargeLeftIconWidget(
-                    text: AppLocalizations.of(context)!.requestRefund,
-                    icon: const Icon(Icons.add_circle, size: 30),
-                    onPressed: () {
-                      Navigator.of(context)
-                          .pushNamed('/dashboard/example_navigation');
-                    },
+                  child: ConstrainedBox(
+                    constraints:
+                        const BoxConstraints(minHeight: 62, maxHeight: 80),
+                    child: ButtonLargeLeftIconWidget(
+                      text: AppLocalizations.of(context)!.requestRefund,
+                      icon: const Icon(Icons.add_circle, size: 30),
+                      onPressed: () {
+                        Navigator.of(context)
+                            .pushNamed('/dashboard/example_navigation');
+                      },
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -53,7 +57,8 @@ class DashBoardScreen extends StatelessWidget {
                 ),
                 Flexible(
                   child: ConstrainedBox(
-                    constraints: const BoxConstraints(minHeight: 62),
+                    constraints:
+                        const BoxConstraints(minHeight: 62, maxHeight: 80),
                     child: ButtonLargeLeftIconWidget(
                       text: AppLocalizations.of(context)!.seeHistory,
                       icon: const Icon(Icons.timelapse_rounded, size: 30),

@@ -1,6 +1,7 @@
 import 'package:demeter_app/features/refund/presentation/dtos/refund_dto.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:demeter_design_system/export.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -12,7 +13,9 @@ class DashboardOptionItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: 400, maxHeight: 149),
+      constraints: BoxConstraints(
+          maxWidth: kIsWeb ? 300 : getProportionateScreenWidth(190),
+          maxHeight: 149),
       // width: getProportionateScreenWidth(190),
       // height: 149,
 
