@@ -29,7 +29,6 @@ class DashBoardScreen extends StatelessWidget {
             image: AppAssets.avatar,
           ),
           Container(
-            alignment: Alignment.center,
             margin: const EdgeInsets.only(bottom: AdaptativeTheme.minimunSpace),
             padding: EdgeInsets.symmetric(
               horizontal:
