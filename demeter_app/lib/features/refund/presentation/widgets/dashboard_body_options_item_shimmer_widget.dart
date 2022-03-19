@@ -1,28 +1,20 @@
+import 'package:demeter_app/features/refund/presentation/bloc/export.dart';
+import 'package:demeter_app/features/refund/presentation/dtos/refund_dto.dart';
 import 'package:demeter_design_system/components/extras/widgets/shiimmer_widget.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/material.dart';
 
-class RefundShimmerWidget extends StatelessWidget {
-  const RefundShimmerWidget({Key? key}) : super(key: key);
+class DashboardBodyOptionItemShimmerWidget extends StatelessWidget {
+  final List<RefundDto> refunds;
+
+  static const _refundsConst = <RefundDto>[];
+  const DashboardBodyOptionItemShimmerWidget(
+      {Key? key, this.refunds = _refundsConst})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 180,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: [
-          Padding(
-            padding: EdgeInsets.only(
-              left: getProportionateScreenWidth(AdaptativeTheme.defaultSpace),
-              right: getProportionateScreenWidth(AdaptativeTheme.mediumSpace),
-            ),
-            child: const _CardRefundShimmerItemWidget(),
-          ),
-          const _CardRefundShimmerItemWidget(),
-        ],
-      ),
-    );
+    return _CardRefundShimmerItemWidget();
   }
 }
 
@@ -32,7 +24,7 @@ class _CardRefundShimmerItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: getProportionateScreenWidth(175),
+      width: getProportionateScreenWidth(180),
       height: 130,
       child: Card(
         elevation: 10,

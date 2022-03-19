@@ -16,6 +16,7 @@ class DemeterApp extends StatelessWidget {
       initialRoute: _homeRoute,
       theme: themeLight,
       darkTheme: themeDark,
+      
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
