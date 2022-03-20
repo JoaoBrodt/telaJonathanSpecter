@@ -16,9 +16,6 @@ class DashboardOptionItemWidget extends StatelessWidget {
       constraints: BoxConstraints(
           maxWidth: kIsWeb ? 300 : getProportionateScreenWidth(190),
           maxHeight: 149),
-      // width: getProportionateScreenWidth(190),
-      // height: 149,
-
       child: Container(
         margin: const EdgeInsets.symmetric(
             vertical: AdaptativeTheme.mediumSpace,
@@ -95,8 +92,12 @@ class _ItemDescriptionWidget extends StatelessWidget {
         Flexible(
           child: Text(
             refund.description,
-            style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                color: Theme.of(context).colorScheme.secondary, fontSize: 15),
+            style: Theme.of(context).brightness == Brightness.dark
+                ? Theme.of(context).textTheme.labelMedium
+                : Theme.of(context).textTheme.labelMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontSize: 15,
+                    ),
             overflow: TextOverflow.ellipsis,
           ),
         ),

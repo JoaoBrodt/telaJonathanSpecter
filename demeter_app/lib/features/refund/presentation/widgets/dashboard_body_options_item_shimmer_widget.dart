@@ -2,6 +2,7 @@ import 'package:demeter_app/features/refund/presentation/bloc/export.dart';
 import 'package:demeter_app/features/refund/presentation/dtos/refund_dto.dart';
 import 'package:demeter_design_system/components/extras/widgets/shiimmer_widget.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class DashboardBodyOptionItemShimmerWidget extends StatelessWidget {
@@ -24,11 +25,14 @@ class _CardRefundShimmerItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 450, maxHeight: 149),
+      constraints: BoxConstraints(
+          maxWidth: kIsWeb ? 300 : getProportionateScreenWidth(190),
+          maxHeight: 149),
+
       // width: getProportionateScreenWidth(180),
       // height: 130,
       child: Card(
-        elevation: 10,
+        elevation: 5,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -43,14 +47,12 @@ class _CardRefundShimmerItemWidget extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(12),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ShimmerWidget(
-                      width: getProportionateScreenWidth(60), height: 15),
-                  ShimmerWidget(
-                      width: getProportionateScreenWidth(60), height: 15)
+                  const ShimmerWidget(width: 55, height: 15),
+                  const ShimmerWidget(width: 55, height: 15)
                 ],
               ),
             ),

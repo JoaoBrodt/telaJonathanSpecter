@@ -12,7 +12,11 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       elevation: 0,
-      title: Text(title, style: Theme.of(context).textTheme.titleSmall?.copyWith(color: Colors.white)),
+      title: Text(title,
+          style: Theme.of(context)
+              .textTheme
+              .titleSmall
+              ?.copyWith(color: Colors.white)),
       centerTitle: false,
       actions: actions,
       bottomOpacity: 0,
@@ -38,7 +42,7 @@ class AppBarWidget extends StatelessWidget implements PreferredSizeWidget {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             stops: const [0.0, 0.5, 0.9],
-            tileMode: TileMode.clamp,
+            tileMode: TileMode.decal,
           ),
         ),
       ),
