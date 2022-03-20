@@ -14,7 +14,7 @@ class DashboardOptionItemWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ConstrainedBox(
       constraints: BoxConstraints(
-          maxWidth: kIsWeb ? 300 : getProportionateScreenWidth(190),
+          maxWidth: kIsWeb ? 300 : getProportionateScreenWidth(200),
           maxHeight: 149),
       child: Container(
         margin: const EdgeInsets.symmetric(

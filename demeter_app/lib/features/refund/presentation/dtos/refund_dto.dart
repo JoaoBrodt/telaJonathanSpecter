@@ -1,6 +1,7 @@
 import 'package:demeter_app/core/date_worker.dart';
+import 'package:equatable/equatable.dart';
 
-class RefundDto {
+class RefundDto extends Equatable {
   final String description;
   final String type;
   final String status;
@@ -51,4 +52,8 @@ class RefundDto {
       dateEnd: dateEnd ?? this.dateStart,
     );
   }
+
+  @override
+  // TODO: implement props
+  List<Object?> get props => [type];
 }
