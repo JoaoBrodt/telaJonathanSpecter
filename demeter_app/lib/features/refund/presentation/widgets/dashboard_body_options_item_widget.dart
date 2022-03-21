@@ -1,6 +1,7 @@
 import 'package:demeter_app/features/refund/presentation/dtos/refund_dto.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:demeter_design_system/export.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -11,34 +12,41 @@ class DashboardOptionItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: getProportionateScreenWidth(190),
-      height: 129,
-      child: Card(
-        // elevation: 10,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Flexible(
-              child: Container(
-                margin: const EdgeInsets.all(AdaptativeTheme.smallSpace),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Flexible(
-                      child: _TravelTitleDescriptionWidget(refund: refund),
-                    ),
-                    _ItemDescriptionWidget(refund: refund),
-                    _RowTypeValueWidget(
-                      refund: refund,
-                    ),
-                  ],
+    return ConstrainedBox(
+      constraints: BoxConstraints(
+          maxWidth: kIsWeb ? 300 : getProportionateScreenWidth(200),
+          maxHeight: 149),
+      child: Container(
+        margin: const EdgeInsets.symmetric(
+            vertical: AdaptativeTheme.mediumSpace,
+            horizontal: AdaptativeTheme.smallSpace),
+        child: Card(
+          elevation: 10,
+          shadowColor: Colors.black.withOpacity(0.8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Flexible(
+                child: Container(
+                  margin: const EdgeInsets.all(AdaptativeTheme.smallSpace),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Flexible(
+                        child: _TravelTitleDescriptionWidget(refund: refund),
+                      ),
+                      _ItemDescriptionWidget(refund: refund),
+                      _RowTypeValueWidget(
+                        refund: refund,
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-            _ContainerButtonWidget()
-          ],
+              const _ContainerButtonWidget()
+            ],
+          ),
         ),
       ),
     );
@@ -84,8 +92,12 @@ class _ItemDescriptionWidget extends StatelessWidget {
         Flexible(
           child: Text(
             refund.description,
-            style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                color: Theme.of(context).colorScheme.secondary, fontSize: 15),
+            style: Theme.of(context).brightness == Brightness.dark
+                ? Theme.of(context).textTheme.labelMedium
+                : Theme.of(context).textTheme.labelMedium?.copyWith(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontSize: 15,
+                    ),
             overflow: TextOverflow.ellipsis,
           ),
         ),

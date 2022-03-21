@@ -10,6 +10,7 @@ class MediumTitleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Padding(
           padding: const EdgeInsets.only(right: AdaptativeTheme.mediumSpace),

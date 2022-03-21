@@ -31,11 +31,10 @@ class RefundSearchBloc extends Bloc<RefundEvent, RefundSearchState> {
 
   Future<void> _onSearchPending(
       RefundEvent event, Emitter<RefundSearchState> emit) async {
-    emit(RefundSearchLoadingState());
+    emit(RefundSearchPedingLoadingState());
     final result = await _searchRefund('PENDING');
-    print(result);
     result.fold((error) {
-      emit(RefundSearchPedingLoadingState());
+      emit(RefundSearchFailureState());
     }, (result) {
       emit(
           RefundSearchPedingSuccessState(result.map(createSearchDto).toList()));

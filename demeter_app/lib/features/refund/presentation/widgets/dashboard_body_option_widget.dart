@@ -1,10 +1,8 @@
-import 'package:demeter_app/features/refund/presentation/bloc/export.dart';
 import 'package:demeter_app/features/refund/presentation/dtos/refund_dto.dart';
 import 'package:demeter_app/features/refund/presentation/widgets/dashboard_body_options_item_shimmer_widget.dart';
 import 'package:demeter_app/features/refund/presentation/widgets/dashboard_body_options_item_widget.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DashboardBodyOptionWidget extends StatelessWidget {
   final String title;
@@ -29,7 +27,7 @@ class DashboardBodyOptionWidget extends StatelessWidget {
             getProportionateScreenWidth(AdaptativeTheme.defaultSpace),
             AdaptativeTheme.minimunSpace,
             getProportionateScreenWidth(AdaptativeTheme.defaultSpace),
-            getProportionateScreenWidth(AdaptativeTheme.minimunSpace),
+            AdaptativeTheme.noneSpace,
           ),
           child: MediumTitleWidget(text: title, icon: icon),
         ),
@@ -66,9 +64,7 @@ class DashboardBodyOptionWidget extends StatelessWidget {
                       left: index == 0
                           ? getProportionateScreenWidth(
                               AdaptativeTheme.defaultSpace)
-                          : 0,
-                      right: getProportionateScreenWidth(
-                          AdaptativeTheme.mediumSpace),
+                          : AdaptativeTheme.noneSpace,
                     ),
                     child: DashboardOptionItemWidget(
                       refund: refunds[index],

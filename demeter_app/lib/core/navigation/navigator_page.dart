@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class NavigatorPage extends StatelessWidget {
@@ -19,6 +20,12 @@ class NavigatorPage extends StatelessWidget {
         onGenerateRoute: (routeSettings) {
           if (!routes.containsKey(routeSettings.name)) {
             return null;
+          }
+          if (kIsWeb) {
+            return MaterialPageRoute(
+              settings: routeSettings,
+              builder: (context) => routes[routeSettings.name]!(context),
+            );
           }
           return PageRouteBuilder(
               pageBuilder: (context, animation, secondaryAnimation) {
