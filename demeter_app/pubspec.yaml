@@ -47,6 +47,7 @@ dependencies:
   bloc_test: ^9.0.3
   mocktail: ^0.3.0
   get_it: ^7.2.0
+  flutter_flavorizr: ^2.1.2
   flutter_svg: ^1.0.3
 
 dev_dependencies:
@@ -105,3 +106,32 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flavorizr:
+  app:
+    android:
+      flavorDimensions: "flavor-type"
+    ios:
+    ide: vscode
+
+  flavors:
+    prod:
+      app:
+        name: "Demeter"
+
+      android:
+        applicationId: "br.com.accurate.demeter"
+
+      ios:
+        bundleId: "br.com.accurate.demeter"
+
+    dev:
+      app:
+        name: "Demeter dev"
+
+      android:
+        applicationId: "br.com.accurate.demeter.dev"
+       
+      ios:
+        bundleId: "br.com.accurate.demeter.dev"
+      generateDummyAssets: true
+     
