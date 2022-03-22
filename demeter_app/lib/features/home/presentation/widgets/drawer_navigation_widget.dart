@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class DrawerNavigator extends StatelessWidget {
   const DrawerNavigator({Key? key}) : super(key: key);
@@ -53,22 +54,27 @@ class DrawerNavigator extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: const Icon(Icons.dashboard),
+            leading: SvgPicture.asset("icons/dashboard.svg"),
             title: Text(AppLocalizations.of(context)!.dashboardScreen),
             onTap: context.read<HomeCubit>().dashboardScreen,
           ),
           ListTile(
-            leading: const Icon(Icons.people),
+            leading: SvgPicture.asset("icons/hr.svg"),
             title: Text(AppLocalizations.of(context)!.rhScreen),
             onTap: context.read<HomeCubit>().rhScreen,
           ),
           ListTile(
-            leading: const Icon(Icons.monetization_on),
+            leading: SvgPicture.asset("icons/refund.svg"),
             title: Text(AppLocalizations.of(context)!.refundScreen),
             onTap: context.read<HomeCubit>().refundScreen,
           ),
           ListTile(
-            leading: const Icon(CupertinoIcons.ellipsis),
+            leading: SvgPicture.asset("icons/clock.svg"),
+            title: Text(AppLocalizations.of(context)!.historicScreen),
+            onTap: context.read<HomeCubit>().historicScreen,
+          ),
+          ListTile(
+            leading: SvgPicture.asset("icons/more.svg"),
             title: Text(AppLocalizations.of(context)!.moreScreen),
             onTap: context.read<HomeCubit>().moreScreen,
           ),

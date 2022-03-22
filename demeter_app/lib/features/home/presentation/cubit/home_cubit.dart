@@ -20,6 +20,9 @@ class HomeCubit extends Cubit<HomeState> {
       case Screens.refund:
         refundScreen();
         break;
+      case Screens.historic:
+        historicScreen();
+        break;
       default:
         moreScreen();
     }
@@ -33,6 +36,9 @@ class HomeCubit extends Cubit<HomeState> {
 
   void refundScreen() => emit(state.copyWith(
       screen: Screens.refund, title: _localizations.refundScreen));
+
+  void historicScreen() => emit(state.copyWith(
+      screen: Screens.historic, title: _localizations.historicScreen));
 
   void moreScreen() => emit(
       state.copyWith(screen: Screens.more, title: _localizations.moreScreen));

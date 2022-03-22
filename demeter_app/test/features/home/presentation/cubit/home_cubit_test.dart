@@ -13,6 +13,8 @@ class MockAppLocalizations extends Mock implements AppLocalizations {
   @override
   final refundScreen = 'Refund';
   @override
+  final historicScreen = 'Historic';
+  @override
   final moreScreen = 'More';
   MockAppLocalizations();
 }
@@ -32,6 +34,8 @@ void main() {
     const rhScreenSelected = HomeState(screen: Screens.rh, title: 'RH');
     const refundScreenSelected =
         HomeState(screen: Screens.refund, title: 'Refund');
+    const historicScreenSelected =
+        HomeState(screen: Screens.historic, title: 'Historic');
     const moreScreenSelected = HomeState(screen: Screens.more, title: 'More');
     blocTest<HomeCubit, HomeState>(
       'emits screen dashboard select',
@@ -52,6 +56,13 @@ void main() {
       build: () => HomeCubit(const HomeState(), mockAppLocalizations),
       act: (cubit) => cubit.refundScreen(),
       expect: () => [refundScreenSelected],
+    );
+
+    blocTest<HomeCubit, HomeState>(
+      'emits screen historic select',
+      build: () => HomeCubit(const HomeState(), mockAppLocalizations),
+      act: (cubit) => cubit.historicScreen(),
+      expect: () => [historicScreenSelected],
     );
 
     blocTest<HomeCubit, HomeState>(

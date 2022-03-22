@@ -16,6 +16,7 @@ class HomeScreen extends StatefulWidget {
     Screens.dashboard: GlobalKey<NavigatorState>(),
     Screens.rh: GlobalKey<NavigatorState>(),
     Screens.refund: GlobalKey<NavigatorState>(),
+    Screens.historic: GlobalKey<NavigatorState>(),
     Screens.more: GlobalKey<NavigatorState>()
   };
 
@@ -64,9 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       routes: Routes.rh,
                     ),
                     NavigatorPage(
-                      navigatorKey:
-                          HomeScreen._navigatorKeys[Screens.refund]!,
+                      navigatorKey: HomeScreen._navigatorKeys[Screens.refund]!,
                       routes: Routes.refund,
+                    ),
+                    NavigatorPage(
+                      navigatorKey:
+                          HomeScreen._navigatorKeys[Screens.historic]!,
+                      routes: Routes.historic,
                     ),
                     NavigatorPage(
                       navigatorKey: HomeScreen._navigatorKeys[Screens.more]!,
