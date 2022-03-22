@@ -1,8 +1,8 @@
 import 'package:demeter_app/core/navigation/screens_enum.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_cubit.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_state.dart';
+import 'package:demeter_app/core/app_assets.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -53,19 +53,23 @@ class BottomNavigationBarWidget extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.dashboardScreen,
-              icon: const Icon(Icons.dashboard),
+              icon: AppAssets.dashboardMenu,
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.rhScreen,
-              icon: const Icon(Icons.people),
+              icon: AppAssets.hrMenu,
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.refundScreen,
-              icon: const Icon(Icons.monetization_on),
+              icon: AppAssets.refundMenu,
+            ),
+            BottomNavigationBarItem(
+              label: AppLocalizations.of(context)!.historicScreen,
+              icon: AppAssets.historicMenu,
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.moreScreen,
-              icon: const Icon(CupertinoIcons.ellipsis),
+              icon: AppAssets.moreMenu,
             ),
           ],
         );
