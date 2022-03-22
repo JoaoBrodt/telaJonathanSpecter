@@ -10,7 +10,8 @@
             "type": "dart",
             "program": "demeter_app//lib/main-dev.dart",
             "args": [
-                "--flavor dev"
+                "--flavor",
+                "dev"
             ]
         },
         {
@@ -19,7 +20,8 @@
             "type": "dart",
             "program": "demeter_app//lib/main-prod.dart",
             "args": [
-                "--flavor prod"
+                "--flavor",
+                "prod"
             ]
         },
         {
