@@ -5,10 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Demeter Dev",
+            "request": "launch",
+            "type": "dart",
+            "program": "demeter_app//lib/main-dev.dart",
+            "args": [
+                "--flavor",
+                "dev"
+            ]
+        },
+        {
+            "name": "Demeter Prod",
+            "request": "launch",
+            "type": "dart",
+            "program": "demeter_app//lib/main-prod.dart",
+            "args": [
+                "--flavor",
+                "prod"
+            ]
+        },
+        {
             "name": "demeter_app",
             "cwd": "demeter_app",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            
         },
         {
             "name": "demeter_app (profile mode)",
@@ -24,25 +45,6 @@
             "type": "dart",
             "flutterMode": "release"
         },
-        {
-            "name": "demeter_design_system",
-            "cwd": "demeter_design_system",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "demeter_design_system (profile mode)",
-            "cwd": "demeter_design_system",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "demeter_design_system (release mode)",
-            "cwd": "demeter_design_system",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        }
+       
     ]
 }
