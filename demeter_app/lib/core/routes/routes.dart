@@ -1,5 +1,6 @@
 import 'package:demeter_app/features/more/exports.dart';
 import 'package:demeter_app/features/refund/export.dart';
+import 'package:demeter_app/features/historic/exports.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
 import 'package:flutter/material.dart';
 
@@ -54,6 +55,9 @@ class Routes {
               color: Colors.blue,
             )
       };
+
+  static Map<String, dynamic Function(BuildContext)> get historic =>
+      {'/historic': (context) => const HistoricScreen()};
 
   static Map<String, dynamic Function(BuildContext)> get more =>
       {'/more': (context) => const MoreScreen()};

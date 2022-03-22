@@ -1,1 +1,1 @@
-enum Screens { dashboard, rh, refund, more }
+enum Screens { dashboard, rh, refund, historic, more }

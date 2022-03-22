@@ -101,7 +101,10 @@ class DashBoardScreen extends StatelessWidget {
 
                       return DashboardBodyOptionWidget(
                         title: AppLocalizations.of(context)!.dashboardApproved,
-                        icon: AppAssets.approved,
+                        icon: const Icon(
+                          Icons.check_circle_outline,
+                          color: Color(0xFF00AC48),
+                        ),
                         isLoading: isLoading,
                         refunds: refunds,
                       );
@@ -125,17 +128,39 @@ class DashBoardScreen extends StatelessWidget {
 
                       return DashboardBodyOptionWidget(
                         title: AppLocalizations.of(context)!.dashboardWaiting,
-                        icon: AppAssets.repproved,
+                        icon: const Icon(
+                          Icons.access_time_rounded,
+                          color: Color(0xFFFE550C),
+                        ),
                         isLoading: isLoading,
                         refunds: refunds,
                       );
                     }),
-                DashboardBodyOptionWidget(
-                  title: AppLocalizations.of(context)!.dashboardRepproved,
-                  icon: AppAssets.waiting,
-                  isLoading: false,
-                  refunds: [],
-                ),
+                BlocConsumer<RefundSearchBloc, RefundSearchState>(
+                    buildWhen: (previous, current) =>
+                        current is RefundSearchPedingLoadingState ||
+                        current is RefundSearchPedingSuccessState,
+                    listener: (context, state) {},
+                    builder: (context, state) {
+                      var refunds = <RefundDto>[];
+                      var isLoading = false;
+                      if (state is RefundSearchInitialState) {
+                        return Container();
+                      }
+                      if (state is RefundSearchPedingSuccessState) {
+                        refunds = state.refunds;
+                      } else if (state is RefundSearchPedingLoadingState) {
+                        isLoading = true;
+                      }
+
+                      return DashboardBodyOptionWidget(
+                        title: AppLocalizations.of(context)!.dashboardRepproved,
+                        icon: const Icon(Icons.cancel_outlined,
+                            color: Color(0xFFFF2A43)),
+                        isLoading: isLoading,
+                        refunds: refunds,
+                      );
+                    }),
               ],
             ),
           ),
