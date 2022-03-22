@@ -128,7 +128,6 @@ class DashBoardScreen extends StatelessWidget {
 
                       return DashboardBodyOptionWidget(
                         title: AppLocalizations.of(context)!.dashboardWaiting,
-                        // icon: AppAssets.repproved,
                         icon: const Icon(
                           Icons.access_time_rounded,
                           color: Color(0xFFFE550C),
@@ -156,7 +155,6 @@ class DashBoardScreen extends StatelessWidget {
 
                       return DashboardBodyOptionWidget(
                         title: AppLocalizations.of(context)!.dashboardRepproved,
-                        // icon: AppAssets.waiting,
                         icon: const Icon(Icons.cancel_outlined,
                             color: Color(0xFFFF2A43)),
                         isLoading: isLoading,

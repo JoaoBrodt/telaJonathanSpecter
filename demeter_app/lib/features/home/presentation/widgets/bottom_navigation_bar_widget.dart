@@ -1,12 +1,11 @@
 import 'package:demeter_app/core/navigation/screens_enum.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_cubit.dart';
 import 'package:demeter_app/features/home/presentation/cubit/home_state.dart';
+import 'package:demeter_app/core/app_assets.dart';
 import 'package:demeter_design_system/demeter_design_system.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNavigationBarWidget extends StatelessWidget {
   const BottomNavigationBarWidget({Key? key}) : super(key: key);
@@ -54,23 +53,23 @@ class BottomNavigationBarWidget extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.dashboardScreen,
-              icon: SvgPicture.asset("icons/dashboard.svg"),
+              icon: AppAssets.dashboardMenu,
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.rhScreen,
-              icon: SvgPicture.asset("icons/hr.svg"),
+              icon: AppAssets.hrMenu,
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.refundScreen,
-              icon: SvgPicture.asset("icons/refund.svg"),
+              icon: AppAssets.refundMenu,
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.historicScreen,
-              icon: SvgPicture.asset("icons/clock.svg"),
+              icon: AppAssets.historicMenu,
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.moreScreen,
-              icon: SvgPicture.asset("icons/more.svg"),
+              icon: AppAssets.moreMenu,
             ),
           ],
         );
