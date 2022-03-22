@@ -1,10 +1,10 @@
 import 'package:demeter_app/core/export.dart';
 import 'package:flutter/material.dart';
-import 'package:demeter_app/demeter_app.dart';
 import 'package:flutter/services.dart';
+import 'demeter_app.dart';
 
 void main() {
-  F.appFlavor = Flavor.DEV;
+  F.appFlavor = Flavor.PROD;
   WidgetsFlutterBinding.ensureInitialized();
   Inject.initialize();
   SystemChrome.setPreferredOrientations(
