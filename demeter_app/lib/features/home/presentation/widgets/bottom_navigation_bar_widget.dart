@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BottomNavigationBarWidget extends StatelessWidget {
   const BottomNavigationBarWidget({Key? key}) : super(key: key);
@@ -53,19 +54,23 @@ class BottomNavigationBarWidget extends StatelessWidget {
           items: [
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.dashboardScreen,
-              icon: const Icon(Icons.dashboard),
+              icon: SvgPicture.asset("icons/dashboard.svg"),
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.rhScreen,
-              icon: const Icon(Icons.people),
+              icon: SvgPicture.asset("icons/hr.svg"),
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.refundScreen,
-              icon: const Icon(Icons.monetization_on),
+              icon: SvgPicture.asset("icons/refund.svg"),
+            ),
+            BottomNavigationBarItem(
+              label: AppLocalizations.of(context)!.historicScreen,
+              icon: SvgPicture.asset("icons/clock.svg"),
             ),
             BottomNavigationBarItem(
               label: AppLocalizations.of(context)!.moreScreen,
-              icon: const Icon(CupertinoIcons.ellipsis),
+              icon: SvgPicture.asset("icons/more.svg"),
             ),
           ],
         );
