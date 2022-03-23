@@ -4,26 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "name": "Demeter Dev",
-            "request": "launch",
-            "type": "dart",
-            "program": "demeter_app//lib/main-dev.dart",
-            "args": [
-                "--flavor",
-                "dev"
-            ]
-        },
-        {
-            "name": "Demeter Prod",
-            "request": "launch",
-            "type": "dart",
-            "program": "demeter_app//lib/main-prod.dart",
-            "args": [
-                "--flavor",
-                "prod"
-            ]
-        },
+        
         {
             "name": "demeter_app",
             "cwd": "demeter_app",
