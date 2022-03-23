@@ -1,4 +1,5 @@
 import 'package:demeter_app/core/app_assets.dart';
+import 'package:demeter_app/core/export.dart';
 import 'package:demeter_app/features/home/presentation/cubit/export.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,7 +44,7 @@ class DrawerNavigator extends StatelessWidget {
                   child: ClipOval(child: AppAssets.avatar),
                 ),
                 Text(
-                  "Olá, Julia!",
+                  "Olá, Julia! ${Config.environment}",
                   style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 Text(

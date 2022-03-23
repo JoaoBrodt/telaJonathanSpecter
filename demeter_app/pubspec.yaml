@@ -47,8 +47,8 @@ dependencies:
   bloc_test: ^9.0.3
   mocktail: ^0.3.0
   get_it: ^7.2.0
-  flutter_flavorizr: ^2.1.2
   flutter_svg: ^1.0.3
+  flutter_dotenv: ^5.0.2
 
 dev_dependencies:
   flutter_test:
@@ -74,6 +74,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - .env
     - images/
     - images/icons/
     - images/reembolsos/
@@ -106,32 +107,36 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
-flavorizr:
-  app:
-    android:
-      flavorDimensions: "flavor-type"
-    ios:
-    ide: vscode
+# flavorizr:
+#   app:
+#     android:
+#       flavorDimensions: "flavor-type"
+#     ios:
+#     ide: vscode
 
-  flavors:
-    prod:
-      app:
-        name: "Demeter"
+#   flavors:
+#     prod:
+#       app:
+#         name: "Demeter"
 
-      android:
-        applicationId: "br.com.accurate.demeter"
+#       android:
+#         applicationId: "br.com.accurate.demeter"
+#         icon: "/Users/cassio/dev/git/accurate/demeter/demeter-flutter-app/demeter_app/images/app_icons/icone_app.png"
 
-      ios:
-        bundleId: "br.com.accurate.demeter"
+#       ios:
+#         bundleId: "br.com.accurate.demeter"
+#         icon: "/Users/cassio/dev/git/accurate/demeter/demeter-flutter-app/demeter_app/images/app_icons/icone_app.png"
 
-    dev:
-      app:
-        name: "Demeter dev"
+#     dev:
+#       app:
+#         name: "Demeter dev"
 
-      android:
-        applicationId: "br.com.accurate.demeter.dev"
+#       android:
+#         applicationId: "br.com.accurate.demeter.dev"
+#         icon: "/Users/cassio/dev/git/accurate/demeter/demeter-flutter-app/demeter_app/images/app_icons/icone_app.png"
        
-      ios:
-        bundleId: "br.com.accurate.demeter.dev"
-      generateDummyAssets: true
+#       ios:
+#         bundleId: "br.com.accurate.demeter.dev"
+#         icon: "/Users/cassio/dev/git/accurate/demeter/demeter-flutter-app/demeter_app/images/app_icons/icone_app.png"
+#       generateDummyAssets: false
      

@@ -4,5 +4,5 @@ export 'presentation/theme/theme_dark.dart';
 export 'presentation/theme/theme_default.dart';
 export 'routes/routes.dart';
 export 'navigation/navigator_page.dart';
-export 'flavors.dart';
+export 'config.dart';
 export 'inject/inject.dart';
