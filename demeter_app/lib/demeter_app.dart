@@ -1,4 +1,5 @@
 import 'package:demeter_app/features/home/export.dart';
+import 'package:demeter_app/features/login/export.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -8,6 +9,8 @@ import 'package:demeter_app/core/export.dart';
 class DemeterApp extends StatelessWidget {
   const DemeterApp({Key? key}) : super(key: key);
   final String _homeRoute = "/home";
+  final String _initialRoute = "/login";
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,7 +25,7 @@ class DemeterApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       onGenerateTitle: (BuildContext context) =>
           AppLocalizations.of(context)!.appName,
-      initialRoute: _homeRoute,
+
       theme: themeLight,
       darkTheme: themeDark,
       localizationsDelegates: const [
@@ -33,7 +36,8 @@ class DemeterApp extends StatelessWidget {
       ],
       supportedLocales: const [Locale('en'), Locale('pt')],
       routes: {
-        _homeRoute: (_) => const HomeScreen(),
+       _homeRoute: (_) => const HomeScreen(),
+       _initialRoute: (_) => const LoginScreen(),
         "/teste": (_) => Scaffold(
               body: Container(
                 color: Colors.red,
